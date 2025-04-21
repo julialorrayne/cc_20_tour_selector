@@ -1,6 +1,7 @@
 //task 4: Reset View
 import React, {useState} from "react";
 
+// Props: receives tour data and a handler to remove the tour from the list
 const TourCard = ({ id, image, info, price, name, onRemoveTour }) => {
     const [readMore, setReadMore] = useState(false);
 

@@ -1,6 +1,7 @@
 //Task 2 Create the Dropdown Filter
 import React, { useState } from 'react';
 
+// DestinationSelector is a dropdown component for filtering tours by destination
 const DestinationSelector = ({ selectedDestination, onDestinationChange, tours }) => {
     const uniqueDestinations = [
         "all",

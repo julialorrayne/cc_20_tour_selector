@@ -2,11 +2,13 @@
 import React from "react";
 import TourCard from "./TourCard";
 
+
+// Gallery displays a list of tours based on the selected destination
 const Gallery = ({ tours, selectedDestination, loading, error, onRemoveTour, onRefresh }) => {
     if (loading) {
         return <p>Loading tours</p>
     }
-    
+// If there's an error fetching data, show error message and a retry button
     if (error) {
         return (
         <div className="error">
@@ -15,7 +17,7 @@ const Gallery = ({ tours, selectedDestination, loading, error, onRemoveTour, onR
         </div>
         );
     }
-    
+    // Filter tours based on selected destination
     const filteredTours = selectedDestination === "all"
         ? tours
         : tours.filter((tour) => tour.name === selectedDestination);
@@ -28,7 +30,7 @@ const Gallery = ({ tours, selectedDestination, loading, error, onRemoveTour, onR
         </div>    
     );
 }
-
+// Render each tour as a TourCard component
 return(
     <section className="gallery">
         {filteredTours.map((tour) => (

@@ -3,12 +3,14 @@ import React, { useEffect, useState } from "react";
 import Gallery from "./Gallery";
 import DestinationSelector from "./DestinationSelector";
 
+// Root component of the application
 const App = () => {
   const [tours, setTours] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [selectedDestination, setSelectedDestination] = useState("all");
 
+// Function to fetch tour data from external API using fetch
   const fetchTours = async () => {
     setLoading(true);
     try {
@@ -20,6 +22,7 @@ const App = () => {
       setTours(data);
       setLoading(false);
     } catch (error) {
+      // Catch and store any fetch-related errors
       setError(error);
       setLoading(false);
     }
@@ -28,10 +31,12 @@ const App = () => {
     fetchTours();
   }, []);
 
+  // Handler to update selected destination based on user dropdown selection
   const handleDestinationChange = (destination) => {
     setSelectedDestination(destination);
   }
 
+  // Handler to remove a specific tour by its ID from the list
 const handleRemoveTour = (id) => {
   setTours((prevTours) => prevTours.filter((tour) => tour.id !== id));
 };
