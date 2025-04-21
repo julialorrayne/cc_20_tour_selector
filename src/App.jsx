@@ -12,7 +12,7 @@ const App = () => {
   const fetchTours = async () => {
     setLoading(true);
     try {
-      const response = await fetch("https://course-api.com/react-tours-project");
+      const response = await fetch("https://api.allorigins.win/raw?url=https://course-api.com/react-tours-project")
       if (!response.ok) {
         throw new Error("Network response was not ok");
       }

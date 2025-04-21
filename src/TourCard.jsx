@@ -22,5 +22,5 @@ const TourCard = ({ id, image, info, price, name, onRemoveTour }) => {
             </div>
         </article>
     );
-
+};
 export default TourCard;
